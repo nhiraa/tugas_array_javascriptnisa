@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Javacript</title>
+    <style>
+        table{
+            text-align: center;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const pegawai = [
+    { id: 1, nama: "Umar", umur: "29", jabatan: "Manager", gaji: 10000000 },
+    { id: 2, nama: "Yasin", umur: "26", jabatan: "Supervisor", gaji: 8000000 },
+    { id: 3, nama: "Rofi", umur: "25", jabatan: "Staff", gaji: 6000000 },
+    { id: 4, nama: "Zahra", umur: "24", jabatan: "Staff", gaji: 6000000 },
+    { id: 5, nama: "Aldi", umur: "24", jabatan: "Intern", gaji: 3000000 }
+];
+
+function tampilkanPegawai() {
+    let table = `<table border="1" width="100%" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th>ID</th>
+                        <th>umur</th>
+                        <th>Nama</th>
+                        <th>Jabatan</th>
+                        <th>Gaji</th>
+                    </tr>`;
+    
+    pegawai.forEach(p => {
+        table += `<tr>
+                    <td>${p.id}</td>
+                    <td>${p.umur}</td>
+                    <td>${p.nama}</td>
+                    <td>${p.jabatan}</td>
+                    <td>${p.gaji.toLocaleString()}</td>
+                  </tr>`;
+    });
+    
+    table += `</table>`;
+    document.body.innerHTML = table;
+}
+
+tampilkanPegawai();
+    </script>
+</body>
+</html>
